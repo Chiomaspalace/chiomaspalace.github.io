@@ -54,7 +54,9 @@
 const $=id=>document.getElementById(id),symbols=['♡','♥','💗','💖','💕','✨'];
 function pad(n){return String(n).padStart(2,'0')}
 const BDAY={month:8,day:25};
-function phase(now){const y=now.getFullYear(),start=new Date(y,BDAY.month,BDAY.day),end=new Date(y,BDAY.month,BDAY.day+1);if(now<start)return{mode:'before',target:start};if(now<end)return{mode:'today',target:end};return{mode:'after',target:new Date(y+1,BDAY.month,BDAY.day)}}
+const WAT=1;/* Nigeria: West Africa Time, UTC+1 all year */
+const lagosMidnight=(y,m,d)=>new Date(Date.UTC(y,m,d)-WAT*3600e3);
+function phase(now){const y=new Date(now.getTime()+WAT*3600e3).getUTCFullYear(),start=lagosMidnight(y,BDAY.month,BDAY.day),end=lagosMidnight(y,BDAY.month,BDAY.day+1);if(now<start)return{mode:'before',target:start};if(now<end)return{mode:'today',target:end};return{mode:'after',target:lagosMidnight(y+1,BDAY.month,BDAY.day)}}
 const LABELS={before:"Time until Chioma's birthday takeover",today:"It's her day! Time left to spoil Chioma",after:"Her day is over, her reign isn't. Next takeover in"};
 const EYEBROWS={before:'Breaking news from the palace 🚨',today:'Live from the palace: it’s her birthday',after:'Breaking news from the palace 🚨'};
 let lastMode='';
