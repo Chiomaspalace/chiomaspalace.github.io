@@ -6,6 +6,8 @@ A funny, sweet, shareable birthday dashboard for Chioma.
 
 Open `index.html` in a browser.
 
+Live at **https://chiomaspalace.github.io/**
+
 ## Publish as a shareable link with GitHub Pages
 
 1. Open the repository **Settings** tab.
@@ -14,4 +16,4 @@ Open `index.html` in a browser.
 4. Choose the `main` branch and `/ (root)`, then click **Save**.
 5. Share the generated URL shown by GitHub Pages.
 
-The page includes a live countdown, royal birthday jokes, floating hearts, confetti, and a share button.
+The page includes the Royal Film (`film.html`, a 58-second animated birthday film with sound), a live countdown, royal birthday jokes, floating hearts, confetti, and a share button.
